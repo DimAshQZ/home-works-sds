@@ -14,6 +14,7 @@ public class EmployeeBook {
     }
 
     public void getAllEmployeesInfo() {
+        System.out.println("\n Список всех сотрудников:");
         Arrays.stream(employees).forEach(System.out::println);
     }
 
