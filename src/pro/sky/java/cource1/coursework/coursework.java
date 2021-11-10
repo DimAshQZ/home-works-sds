@@ -31,13 +31,12 @@ public class coursework {
         employeeBook.getAllEmployeesInfoOfDepartment(1);// Повышенная сложность 2f
         employeeBook.allEmployeesWithLessSalary(139000);// Повышенная сложность 3a
         employeeBook.allEmployeesWithSalaryMore(140000);// Повышенная сложность 3b
-        //employeeBook.deleteEmployee(8); Ошибка NullPointerException пока не понял как работатет
-        employeeBook.deleteEmployee("Бернар Арно");// Очень сложно 4b
+        employeeBook.deleteEmployee(8);// Очень сложно 4b
         employeeBook.getAllEmployeesInfo();
         employeeBook.addEmployee("Амансио Ортега",3,77000);// Очень сложно 4a
         employeeBook.getAllEmployeesInfo();
         employeeBook.changeEmployee("Амансио Ортега",155500.0);// Очень сложно 5a
         employeeBook.changeEmployee("Амансио Ортега",2);// Очень сложно 5b
-        employeeBook.employeesByDepartment();// Очень сложно 6
+        employeeBook.printEmployeesByDepartment();// Очень сложно 6
     }
 }

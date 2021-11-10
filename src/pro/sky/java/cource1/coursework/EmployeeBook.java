@@ -1,8 +1,6 @@
 package pro.sky.java.cource1.coursework;
 
-import java.util.Arrays;
 import java.util.Objects;
-import java.util.stream.IntStream;
 
 
 public class EmployeeBook {
@@ -15,15 +13,24 @@ public class EmployeeBook {
 
     public void getAllEmployeesInfo() {
         System.out.println("\n Список всех сотрудников:");
-        Arrays.stream(employees).forEach(System.out::println);
+        for (Employee employee : employees) {
+            if (employee != null) {
+                System.out.println(employee);
+            }
+        }
     }
 
     public double calcSalarySum() {
-        return Arrays.stream(employees).mapToDouble(Employee::getSalary).sum();
+        double sum = 0.0;
+        for (Employee employee : employees) {
+            double salary = employee.getSalary();
+            sum += salary;
+        }
+        return sum;
     }
 
     public Employee minSalaryEmployee() {
-        double minSalary = Integer.MAX_VALUE;
+        double minSalary = Double.MAX_VALUE;
         Employee result = null;
         for (Employee employee : employees) {
             if (employee.getSalary() < minSalary) {
@@ -47,15 +54,25 @@ public class EmployeeBook {
     }
 
     public double averageSalary() {
-        return calcSalarySum() / employees.length;
+        int count = 0;
+        for (Employee employee : employees) {
+            if (employee != null) {
+                count++;
+            }
+        }
+        return calcSalarySum() / count;
     }
 
     public void allEmployeesName() {
-        Arrays.stream(employees).map(employee -> employee.getId() + ") " + employee.getName()).forEach(System.out::println);
+        for (Employee employee : employees) {
+            System.out.println(employee.getId() + ") " + employee.getName());
+        }
     }
 
     public void indexationOfWages(double percent) {
-        for (Employee employee : employees) employee.setSalary(percent / 100 * employee.getSalary());
+        for (Employee employee : employees) {
+            employee.setSalary(percent / 100 * employee.getSalary());
+        }
     }
 
     public Employee minSalaryEmployeeOfDepartment(int department) {
@@ -83,21 +100,32 @@ public class EmployeeBook {
     }
 
     public double calcSalarySumOfDepartment(int department) {
-        return Arrays.stream(employees).filter(employee -> employee.getDepartment() == department).mapToDouble(Employee::getSalary).sum();
+        double sum = 0.0;
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == department) {
+                double salary = employee.getSalary();
+                sum += salary;
+            }
+        }
+        return sum;
     }
 
     public double averageSalaryOfDepartment(int department) {
         int count = 0;
         for (Employee employee : employees) {
             if (employee.getDepartment() == department) {
-                count += 1;
+                count++;
             }
         }
         return calcSalarySumOfDepartment(department) / count;
     }
 
     public void indexationOfWagesOfDepartment(int department, double percent) {
-        Arrays.stream(employees).filter(value -> value.getDepartment() == department).forEach(employee -> employee.setSalary(percent / 100 * employee.getSalary()));
+        for (Employee value : employees) {
+            if (value.getDepartment() == department) {
+                value.setSalary(percent / 100 * value.getSalary());
+            }
+        }
     }
 
     public void getAllEmployeesInfoOfDepartment(int department) {
@@ -148,18 +176,15 @@ public class EmployeeBook {
         }
     }
 
-    public void deleteEmployee(String name) {
-        IntStream.range(0, employees.length).filter(i -> Objects.equals(employees[i].getName(), name)).forEach(i -> employees[i] = null);
-    }
-
-    /* Ошибка NullPointerException пока не понял как работатет
     public void deleteEmployee(int id) {
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getId() == id) {
-                employees[i] = null;
+            if (employees[i] != null) {
+                if (employees[i].getId() == id) {
+                    employees[i] = null;
+                }
             }
         }
-    }*/
+    }
 
     public void changeEmployee(String name, double salary) {
         for (Employee employee : employees) {
@@ -177,15 +202,9 @@ public class EmployeeBook {
         }
     }
 
-    public void employeesByDepartment() {
+    public void printEmployeesByDepartment() {
         System.out.println("\n ФИО всех сотрудников по отделам");
-        int departments = 1;
-        for (Employee value : employees) {
-            if (value.getDepartment() > departments) {
-                departments = value.getDepartment();
-            }
-        }
-        for (int i = 1; i <= departments; i++) {
+        for (int i = 1; i <= 5; i++) {
             System.out.println(i + " отдел");
             for (Employee employee : employees) {
                 if (employee.getDepartment() == i) {
