@@ -1,6 +1,6 @@
-package pro.sky.java.cource1.coursework;
+package pro.sky.java.course1.courseWork;
 
-public class coursework {
+public class Coursework {
     public static void main(String[] args) {
         EmployeeBook employeeBook = new EmployeeBook();
         employeeBook.addEmployee("Джефф Безос", 1, 177000);
@@ -18,7 +18,7 @@ public class coursework {
         System.out.println("\nСумма затрат на ЗП в месяц: " + employeeBook.calcSalarySum());// Базовая сложность 8b
         System.out.println("\nСотрудник с минимальной ЗП: " + employeeBook.minSalaryEmployee());// Базовая сложность 8c
         System.out.println("\nСотрудник с максимальной  ЗП: " + employeeBook.maxSalaryEmployee());// Базовая сложность 8d
-        System.out.println("\nСреднее значение зарплат: " + employeeBook.averageSalary());// Базовая сложность 8e
+        System.out.println("\n Среднее значение зарплат: " + employeeBook.averageSalary());// Базовая сложность 8e
         employeeBook.allEmployeesName();// Базовая сложность 8f
 
         employeeBook.indexationOfWages(150);// Повышенная сложность 1
@@ -38,5 +38,7 @@ public class coursework {
         employeeBook.changeEmployee("Амансио Ортега",155500.0);// Очень сложно 5a
         employeeBook.changeEmployee("Амансио Ортега",2);// Очень сложно 5b
         employeeBook.printEmployeesByDepartment();// Очень сложно 6
+        employeeBook.addEmployee("Советбеков Димаш",1,900000);
+        employeeBook.getAllEmployeesInfo();
     }
 }
