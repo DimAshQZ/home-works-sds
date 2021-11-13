@@ -1,11 +1,10 @@
-package pro.sky.java.cource1.coursework;
+package pro.sky.java.course1.courseWork;
 
 import java.util.Objects;
 
 
 public class EmployeeBook {
     private final Employee[] employees;
-    private int size;
 
     public EmployeeBook() {
         this.employees = new Employee[10];
@@ -129,7 +128,7 @@ public class EmployeeBook {
     }
 
     public void getAllEmployeesInfoOfDepartment(int department) {
-        System.out.println("\nВсе сотрудники " + department + " отдела.");
+        System.out.println("\n Все сотрудники " + department + " отдела.");
         for (Employee employee : employees) {
             if (employee.getDepartment() == department) {
                 System.out.println("ФИО: " + employee.getName() +
@@ -140,7 +139,7 @@ public class EmployeeBook {
     }
 
     public void allEmployeesWithLessSalary(double salary) {
-        System.out.println("\nВсе сотрудники c ЗП меньше " + salary);
+        System.out.println("\n Все сотрудники c ЗП меньше " + salary);
         for (Employee employee : employees) {
             if (employee.getSalary() < salary) {
                 System.out.println("ФИО: " + employee.getName() +
@@ -151,7 +150,7 @@ public class EmployeeBook {
     }
 
     public void allEmployeesWithSalaryMore(double salary) {
-        System.out.println("\nВсе сотрудники c ЗП больше " + salary);
+        System.out.println("\n Все сотрудники c ЗП больше " + salary);
         for (Employee employee : employees) {
             if (employee.getSalary() >= salary) {
                 System.out.println("ФИО: " + employee.getName() +
@@ -161,19 +160,15 @@ public class EmployeeBook {
         }
     }
 
-    public void addEmployee(String name, int department, int salary) {
+    public void addEmployee(String name, int department, double salary) {
         Employee newEmployee = new Employee(name, department, salary);
-        boolean empty = false;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] == null) {
                 employees[i] = newEmployee;
-                empty = true;
-                break;
+                return;
             }
         }
-        if (!empty) {
-            employees[size++] = newEmployee;
-        }
+        System.out.println("\n Нет вакантных мест");
     }
 
     public void deleteEmployee(int id) {
