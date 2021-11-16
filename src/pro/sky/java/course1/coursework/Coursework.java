@@ -1,4 +1,4 @@
-package pro.sky.java.course1.courseWork;
+package pro.sky.java.course1.coursework;
 
 public class Coursework {
     public static void main(String[] args) {
@@ -16,21 +16,21 @@ public class Coursework {
 
         employeeBook.getAllEmployeesInfo();// Базовая сложность 8a
         System.out.println("\nСумма затрат на ЗП в месяц: " + employeeBook.calcSalarySum());// Базовая сложность 8b
-        System.out.println("\nСотрудник с минимальной ЗП: " + employeeBook.minSalaryEmployee());// Базовая сложность 8c
-        System.out.println("\nСотрудник с максимальной  ЗП: " + employeeBook.maxSalaryEmployee());// Базовая сложность 8d
-        System.out.println("\n Среднее значение зарплат: " + employeeBook.averageSalary());// Базовая сложность 8e
-        employeeBook.allEmployeesName();// Базовая сложность 8f
+        System.out.println("\nСотрудник с минимальной ЗП: " + employeeBook.getMinSalaryEmployee());// Базовая сложность 8c
+        System.out.println("\nСотрудник с максимальной  ЗП: " + employeeBook.getMaxSalaryEmployee());// Базовая сложность 8d
+        System.out.println("\n Среднее значение зарплат: " + employeeBook.calcAverageSalary());// Базовая сложность 8e
+        employeeBook.printAllEmployeesName();// Базовая сложность 8f
 
         employeeBook.indexationOfWages(150);// Повышенная сложность 1
         employeeBook.getAllEmployeesInfo();
-        System.out.println("\nСотрудник с минимальной ЗП из 2 отдела: " + employeeBook.minSalaryEmployeeOfDepartment(2));// Повышенная сложность 2a
-        System.out.println("\nСотрудник с максимальной ЗП из 5 отдела: " + employeeBook.maxSalaryEmployeeOfDepartment(5));// Повышенная сложность 2b
+        System.out.println("\nСотрудник с минимальной ЗП из 2 отдела: " + employeeBook.getMinSalaryEmployeeOfDepartment(2));// Повышенная сложность 2a
+        System.out.println("\nСотрудник с максимальной ЗП из 5 отдела: " + employeeBook.getMaxSalaryEmployeeOfDepartment(5));// Повышенная сложность 2b
         System.out.println("\nСумма затрат на ЗП в месяц в 3 отделе: " + employeeBook.calcSalarySumOfDepartment(3));// Повышенная сложность 2c
-        System.out.println("\nСреднее значение зарплат в 4 отделе: " + employeeBook.averageSalaryOfDepartment(4));// Повышенная сложность 2d
+        System.out.println("\nСреднее значение зарплат в 4 отделе: " + employeeBook.calcAverageSalaryOfDepartment(4));// Повышенная сложность 2d
         employeeBook.indexationOfWagesOfDepartment(1, 130);// Повышенная сложность 2e
-        employeeBook.getAllEmployeesInfoOfDepartment(1);// Повышенная сложность 2f
-        employeeBook.allEmployeesWithLessSalary(139000);// Повышенная сложность 3a
-        employeeBook.allEmployeesWithSalaryMore(140000);// Повышенная сложность 3b
+        employeeBook.printAllEmployeesInfoOfDepartment(1);// Повышенная сложность 2f
+        employeeBook.printAllEmployeesWithLessSalary(139000);// Повышенная сложность 3a
+        employeeBook.printAllEmployeesWithSalaryMore(140000);// Повышенная сложность 3b
         employeeBook.deleteEmployee(8);// Очень сложно 4b
         employeeBook.getAllEmployeesInfo();
         employeeBook.addEmployee("Амансио Ортега",3,77000);// Очень сложно 4a

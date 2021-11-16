@@ -1,4 +1,4 @@
-package pro.sky.java.course1.courseWork;
+package pro.sky.java.course1.coursework;
 
 import java.util.Objects;
 
