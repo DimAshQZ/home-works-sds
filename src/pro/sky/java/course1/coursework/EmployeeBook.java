@@ -67,9 +67,9 @@ public class EmployeeBook {
         }
     }
 
-    public void indexationOfWages(double percent) {
+    public void indexationOfWages(int percent) {
         for (Employee employee : employees) {
-            employee.setSalary(percent / 100 * employee.getSalary());
+            employee.setSalary(employee.getSalary() + (employee.getSalary() * percent / 100));
         }
     }
 
@@ -117,10 +117,10 @@ public class EmployeeBook {
         return calcSalarySumOfDepartment(department) / count;
     }
 
-    public void indexationOfWagesOfDepartment(int department, double percent) {
+    public void indexationOfWagesOfDepartment(int department, int percent) {
         for (Employee employee : employees) {
             if (employee.getDepartment() == department) {
-                employee.setSalary(percent / 100 * employee.getSalary());
+                employee.setSalary(employee.getSalary() + (employee.getSalary() * percent / 100));
             }
         }
     }
